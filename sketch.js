@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const constraint = Matter.Constraint;
 
 var rect1,hex,engine,world,rect2,con2,rect3,rect4,rect5,rect7,rect8,rect9,rect10,rect11,rect12,rect13,rect14,rect15,rect16,rect17,rect18,rect19,r2,
-rt2,game;
+rt2,game,score;
 function setup() {
   createCanvas(1000,800);
   
@@ -36,7 +36,7 @@ rt2=new Rect(800,190,100,50,"orange")
  con2=new Rope(hex.body,{x:100,y:400})
  game="onsling"
  
- 
+ score=0
 
 }
  
@@ -45,6 +45,8 @@ rt2=new Rect(800,190,100,50,"orange")
 
 function draw() {
   background(0);
+  text(8)
+  text("Score"+score,500,100)
   Engine.update(engine)
   rect2.display()
   rect3.display();
@@ -71,6 +73,25 @@ rt2.display();
 
 con2.display();
 bla()
+rect4.score()
+  rect5.score()  
+  rect6.score();
+  rect7.score();
+  rect8.score();
+  rect9.score();
+  rect10.score();
+  rect11.score();
+  rect12.score();
+ 
+  rect1.score();
+  rect13.score();
+  rect14.score();
+  rect15.score();
+  rect16.score();
+  rect17.score();
+  rect18.score();
+  rect19.score();
+  rt2.score()
 }
 
 function mouseDragged(){
