@@ -4,14 +4,14 @@ const Bodies = Matter.Bodies;
 const constraint = Matter.Constraint;
 
 var rect1,hex,engine,world,rect2,con2,rect3,rect4,rect5,rect7,rect8,rect9,rect10,rect11,rect12,rect13,rect14,rect15,rect16,rect17,rect18,rect19,r2,
-rt2;
+rt2,game;
 function setup() {
   createCanvas(1000,800);
   
   engine=Engine.create();
   world=engine.world
   Engine.run(engine)
-  hex=new Rect(100,400,50,20,"blue")
+  hex=new Ball(100,400)
   rect1=new Rect(405,482,35,25,(123,234,234))
   rect2=new Re(500,800,1000,20)
  rect3=new Re(400,500,290,20);
@@ -34,7 +34,7 @@ rect4=new Rect(440,482,35,25,"green")
 rt2=new Rect(800,190,100,50,"orange")
  r2=new Re(800,200,200,20)
  con2=new Rope(hex.body,{x:100,y:400})
- 
+ game="onsling"
  
  
 
@@ -46,15 +46,8 @@ rt2=new Rect(800,190,100,50,"orange")
 function draw() {
   background(0);
   Engine.update(engine)
-
-  
-  
   rect2.display()
   rect3.display();
-  
-  
-  
-  
   rect4.display()
   rect5.display();
   rect6.display();
@@ -75,26 +68,32 @@ function draw() {
   rect19.display();
   r2.display();
 rt2.display();
-  con2.display();
-  
-  re()
-  
 
+con2.display();
+bla()
 }
 
 function mouseDragged(){
 
+  
+    
+  
+
+  if(game==="onsling"){
+
 hex.body.position.x=mouseX;
 hex.body.position.y=mouseY;
+  }
+  
 }
-function re(){
-  if (keyCode==='space'){
-    Matter.body.setPosition(hex.body,hex.body.position,{x:100,y:400})
+function bla(){
+  if (keyDown("space")){
 con2.attach(hex.body)
+game="onsling"
   }
 }
 function mouseReleased(){
-  
+
     con2.fly();
-  
+    game="relesed"
 }
