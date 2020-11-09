@@ -14,6 +14,7 @@ class Rect{
         World.add(world,this.body);
         
         }
+      
         display(){   
            // push()
             if (this.body.speed<3) {
@@ -39,6 +40,11 @@ class Rect{
                 pop();
             }
            // pop()
+        }
+        score(){
+if(this.Visiblity<0&&this.Visiblity>-50){
+score=score+1
+            }
         }
     }
    
